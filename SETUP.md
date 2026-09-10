@@ -39,10 +39,12 @@ python3 scripts/check-output.py public /blog-staging/
 hugo server
 ```
 
-The checker validates generated HTML and local references, including fingerprinted CSS and bundled images. `scripts/editorial-trials.py` also builds temporary content variations so template assumptions are tested without keeping those posts.
+The checker validates generated HTML and local references, includingголь fingerprint sets and bundled images. `scripts/editorial-trials.py` also builds temporary content variations so template assumptions are tested without keeping those posts.
 
-## Promoting the experiment
+## Promotion
 
-Use this repository as staging for template, workflow and content-pipeline changes. When transferring a proven change to `blog`, update source-repository links in templates, content and docs. Deployment URLs derive from Pages automatically. The eventual root `site` remains a separate repository and can link to the blog and other projects.
+Use this repository as staging for template, workflow and content-pipeline changes. Nothing promotes automatically. Follow [the manual review and promotion checklist](PROMOTION.md), record the exact reviewed staging commit, and move the approved snapshot into `blog` deliberately.
+
+The production workflow runs checks after promotion but skips Pages deployment until production publishing is intentionally enabled. The root `site` remains a separate repository and can link to the blog and other projects.
 
 Reference: https://gohugo.io/host-and-deploy/host-on-github-pages/
