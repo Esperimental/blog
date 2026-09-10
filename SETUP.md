@@ -39,7 +39,7 @@ python3 scripts/check-output.py public /blog-staging/
 hugo server
 ```
 
-The checker validates generated HTML and local references, includingголь fingerprint sets and bundled images. `scripts/editorial-trials.py` also builds temporary content variations so template assumptions are tested without keeping those posts.
+The checker validates generated HTML and local references, including fingerprinted CSS and bundled images. `scripts/editorial-trials.py` also builds temporary content variations so template assumptions are tested without keeping those posts.
 
 ## Promotion
 
