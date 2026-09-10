@@ -32,7 +32,7 @@ jobs:
       - name: Exercise editorial changes
         run: python3 scripts/editorial-trials.py hugo
       - name: Configure Pages
-        if: github.event_name != 'pull_request' && (github.repository == 'Esperimental/blog-staging' || vars.PUBLISH_PAGES == 'true')
+        if: github.event_name != 'pull_request'
         id: pages
         uses: actions/configure-pages@v5
       - name: Build deployment output
