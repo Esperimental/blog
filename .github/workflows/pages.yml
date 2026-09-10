@@ -15,7 +15,6 @@ jobs:
     env:
       HUGO_VERSION: '0.166.0'
       REPO_NAME: ${{ github.event.repository.name }}
-   Bots
     steps:
       - uses: actions/checkout@v4
       - name: Install Hugo
