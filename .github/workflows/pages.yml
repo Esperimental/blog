@@ -36,7 +36,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Build deployment output
-        if: github.event_name != 'pull_request' && (github.repository == 'Esperimental/blog-staging' || vars.PUBLISH_PAGES == 'true')
+        if: github.event_name != 'pull_request'
         env:
           SITE_BASE_URL: ${{ steps.pages.outputs.base_url }}/
         run: hugo --baseURL "$SITE_BASE_URL"
@@ -44,7 +44,7 @@ jobs:
         with:
           path: public
   deploy:
-    if: github.event_name != 'pull_request' && (github.repository == 'Esperimental/blog-staging' || vars.PUBLISH_PAGES == 'true')
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     permissions:
