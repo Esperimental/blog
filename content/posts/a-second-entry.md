@@ -8,7 +8,7 @@ This is a **sample post** for testing the blog, not an account of a completed ex
 ## A few things a notebook should handle
 
 - Clear text on a small screen.
-- Links to [the source repository](https://github.com/Esperimental/blog-staging).
+- External links and ordinary formatting.
 - Code and ordinary formatting.
 
 ```js
