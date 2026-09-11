@@ -1,8 +1,15 @@
-# Hugo blog staging
+# Hugo blog
 
-Staging implementation selected after comparison with [the Eleventy experiment](https://github.com/Esperimental/tmp-blog-eleventy).
+Minimal Hugo implementation selected after comparison with [the Eleventy experiment](https://github.com/Esperimental/tmp-blog-eleventy).
 
-Same two posts and author data; Hugo templates replace Nunjucks. No external theme, npm packages, Sass or Go modules.
+The same source tree is used by two repositories:
+
+- [`blog-staging`](https://github.com/Esperimental/blog-staging) is the development source and publishes the preview site.
+- [`blog`](https://github.com/Esperimental/blog) is its GitHub fork and publishes only manually reviewed production revisions.
+
+Development starts in staging. Promotion and synchronization use Git commits and cross-repository pull requests—never file copying. See [the manual review and promotion workflow](PROMOTION.md).
+
+Same two sample posts and author data; Hugo templates replace Nunjucks. No external theme, npm packages, Sass or Go modules.
 
 Requires Hugo 0.166.0 (the standard Linux binary works).
 
@@ -12,7 +19,7 @@ python3 scripts/check-output.py public /blog-staging/
 hugo server
 ```
 
-Select **Settings → Pages → Source → GitHub Actions** once. Push to main to publish; pull requests build without deploying.
+Select **Settings → Pages → Source → GitHub Actions** once in each repository. A push to `main` publishes that repository's site; pull requests build without deploying.
 
 - Posts: `content/posts/`
 - Settings: `hugo.toml`
